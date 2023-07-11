@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form
+        id="uploadForm"
+        th:action="@{/upload_multiple}" method="post"
+      th:object="${candidate}"
+      enctype="multipart/form-data"
+>
+  <div>
+    <label>Profile Picture: </label>
+    <input type="file" name="profilePictureFile" accept="image/png, image/jpeg" required />
+  </div>
+  <div>
+    <label>Photo ID: </label>
+    <input type="file" name="photoIdFile"  accept="image/png, image/jpeg" required />
+  </div>
+  <div>
+    <label>Document: </label>
+    <input type="file" name="documentFile" required />
+  </div>
+  <button id="uploadBtn" >Upload</button>
+</form>
+<script>
+  const form = document.getElementById("uploadForm");
+  const submitBtn = document.getElementById("uploadBtn");
+
+  submitBtn.addEventListener("click", function () {
+    form.submit();
+  });
+</script>
+</html>

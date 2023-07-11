@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Image</th>
+    <th>Image</th>
+    <tbody>
+    <tr  th:each="candidate : ${candidates}">
+        <td th:text="${candidate.id}"></td>
+        <td>
+            <img th:src="@{'/' + ${candidate.profilePicture}}" width="500px;"/>
+        </td>
+        <td>
+            <img th:src="@{'/' + ${candidate.photoId}}" width="500px;"/>
+        </td>
+        <td>
+            <img th:src="@{'/' + ${candidate.document}}" width="500px;"/>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

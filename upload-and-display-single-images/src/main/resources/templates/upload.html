@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form
+        id="uploadForm"
+        th:action="@{/users/save}"
+      th:object="${user}" method="post"
+      enctype="multipart/form-data"
+>
+    <div>
+        <label>Photos: </label>
+        <input type="file" name="image" accept="image/png, image/jpeg" />
+    </div>
+    <button id="uploadBtn" >Upload</button>
+</form>
+<script>
+    const form = document.getElementById("uploadForm");
+    const submitBtn = document.getElementById("uploadBtn");
+
+    submitBtn.addEventListener("click", function () {
+        form.submit();
+    });
+</script>
+</body>
+</html>
